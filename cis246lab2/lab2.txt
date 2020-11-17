@@ -1,0 +1,53 @@
+Script started on Tue 17 Nov 2020 02:08:53 PM EST
+[ryan@localhost cis246lab2]$ mkdir archive/
+mkdir: cannot create directory ‘archive/’: File exists
+[ryan@localhost cis246lab2]$ mkdir backup
+[ryan@localhost cis246lab2]$ ls
+[0m[01;34marchive[0m  [01;34mbackup[0m  lab2.txt
+[ryan@localhost cis246lab2]$ cd /var/log
+[ryan@localhost log]$ pwd
+/var/log
+[ryan@localhost log]$ tar cvf ~/repos/cis246lab2/log.tar *./[Klog
+tar: boot.log: Cannot open: Permission denied
+tar: yum.log: Cannot open: Permission denied
+tar: Exiting with failure status due to previous errors
+[ryan@localhost log]$ tar cvf ~/repos/cis246lab2/log.tar *.log[1@s[1@u[1@d[1@o[1@ 
+[sudo] password for ryan: 
+boot.log
+yum.log
+[ryan@localhost log]$ cd ~/repos/cis246lab2
+[ryan@localhost cis246lab2]$ ls
+[0m[01;34marchive[0m  [01;34mbackup[0m  lab2.txt  [01;31mlog.tar[0m
+[ryan@localhost cis246lab2]$ ls -l log.tar
+-rw-rw-r--. 1 ryan ryan 61440 Nov 17 14:09 [0m[01;31mlog.tar[0m
+[ryan@localhost cis246lab2]$ tar tvf ./log.tar 
+-rw------- root/root     18839 2020-11-17 13:48 boot.log
+-rw------- root/root     37019 2020-11-17 13:48 yum.log
+[ryan@localhost cis246lab2]$ ls
+[0m[01;34marchive[0m  [01;34mbackup[0m  lab2.txt  [01;31mlog.tar[0m
+[ryan@localhost cis246lab2]$ tar xvf t[Klog.tar ./backup/
+tar: ./backup: Not found in archive
+tar: Exiting with failure status due to previous errors
+[ryan@localhost cis246lab2]$ cd archive/
+[ryan@localhost archive]$ tar xvg [K[Kf ../log.tar 
+boot.log
+yum.log
+[ryan@localhost archive]$ ls
+boot.log  yum.log
+[ryan@localhost archive]$ cd ..
+[ryan@localhost cis246lab2]$ ls
+[0m[01;34marchive[0m  [01;34mbackup[0m  lab2.txt  [01;31mlog.tar[0m
+[ryan@localhost cis246lab2]$ mv ./log.tar ./l[Kbackup/log.tar
+[ryan@localhost cis246lab2]$ ls
+[0m[01;34marchive[0m  [01;34mbackup[0m  lab2.txt
+[ryan@localhost cis246lab2]$ c[Kls backup/
+[0m[01;31mlog.tar[0m
+[ryan@localhost cis246lab2]$ ls ./[K[Karchive/
+boot.log  yum.log
+[ryan@localhost cis246lab2]$ pwd
+/home/ryan/repos/cis246lab2
+[ryan@localhost cis246lab2]$ whami[K[K[Koami
+ryan
+[ryan@localhost cis246lab2]$ exit[K[K[K[Kexit
+
+Script done on Tue 17 Nov 2020 02:18:37 PM EST
