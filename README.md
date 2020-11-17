@@ -1,2 +1,3 @@
-# cis246lab2
-Lab 2
+# CIS246 Lab 2
+
+Ryan Akers
